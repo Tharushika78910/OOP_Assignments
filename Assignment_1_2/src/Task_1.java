@@ -10,7 +10,7 @@ public class Task_1 {
 
         double temp_Fah = (temp_Cel * 9/5) + 32;
 
-        System.out.println("The temperature in Fahrenheit is " + temp_Fah);
+        System.out.printf("The temperature in Fahrenheit is %.1f\n", temp_Fah);
 
     }
 }
