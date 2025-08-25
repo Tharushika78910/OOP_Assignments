@@ -24,7 +24,7 @@ public class Task_4 {
 
                 if (result == (num1 * num2))
                 {
-                    score = score + 1;
+                    score++;
                     System.out.println("Correct!");
                 }
                 else {
