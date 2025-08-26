@@ -23,7 +23,7 @@ public class Task_2
         for (int x=0; x<amount; x++)
         {
             int curr_sum = 0;
-            for (int y=x;y<amount;y++)
+            for (int y=x; y<amount;y++)
             {
                 curr_sum += num_list[y];
 
