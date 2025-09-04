@@ -1,0 +1,69 @@
+package Task_4;
+
+import java.util.ArrayList;
+
+public class GroceryListManager {
+    private ArrayList<GroceryItem> groceryList = new ArrayList<>();
+
+    public void addItem(String item, double cost, String category, int quantity) {
+        groceryList.add(new GroceryItem(item, cost, category, quantity));
+    }
+
+    public void displayList() {
+        int index = 1;
+        for (GroceryItem item1 : groceryList) {
+            System.out.println(index + ". " + item1);
+            index++;
+        }
+    }
+
+    public boolean checkItem(String item) {
+        for (GroceryItem item2 : groceryList) {
+            if (item2.getName().equalsIgnoreCase(item)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void removeItem(String item) {
+        groceryList.removeIf(item2 -> item2.getName().equalsIgnoreCase(item));
+    }
+
+    public void displayByCategory(String category) {
+        int index = 1;
+        for (GroceryItem item : groceryList) {
+            if (item.getCategory().equalsIgnoreCase(category)) {
+                System.out.println(index + ". " + item);
+                index++;
+            }
+        }
+
+        if(index==1){
+            System.out.println("No items found in the category "+category);
+        }
+    }
+
+    public void updateQuantity(String item, int quantity) {
+        for (GroceryItem item2 : groceryList) {
+            if (item2.getName().equalsIgnoreCase(item)) {
+                item2.setQuantity(quantity);
+                return;
+            }
+        }
+        System.out.println("Item not found : "+item);
+    }
+
+    public void displayAvailableItems() {
+        int index = 1;
+        for (GroceryItem item2 : groceryList) {
+            if (item2.getQuantity()>0) {
+                System.out.println(index + ". " + item2);
+                index++;
+            }
+        }
+        if(index==1){
+            System.out.println("No available items (all quantities are 0)");
+        }
+    }
+}
