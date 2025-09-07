@@ -1,0 +1,21 @@
+package Task_3;
+
+public class ElectricCar extends AbstractVehicle {
+    private int batteryCapacity; // in kWh
+
+    public ElectricCar(String color, int batteryCapacity) {
+        super("Electric Car", "Electricity", color);
+        this.batteryCapacity = batteryCapacity;
+    }
+
+    @Override
+    public void charge() {
+        System.out.println(type + " is charging. Battery capacity: " + batteryCapacity + " kWh");
+    }
+
+    @Override
+    public String getInfo() {
+        return super.getInfo() + "\n" +
+                "Battery Capacity: " + batteryCapacity + " kWh";
+    }
+}
